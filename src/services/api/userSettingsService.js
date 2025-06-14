@@ -6,24 +6,28 @@ let data = { ...userSettings };
 
 const userSettingsService = {
   async get() {
-    await delay(200);
+    await delay(250);
     return { ...data };
   },
 
-  async update(updates) {
-    await delay(300);
-    data = { ...data, ...updates };
+  async update(settings) {
+    await delay(250);
+    data = { ...data, ...settings, lastUpdated: new Date().toISOString() };
     return { ...data };
   },
 
-async reset() {
+  async reset() {
     await delay(250);
     data = {
       averageCycleLength: 28,
       reminderTime: "09:00",
       notificationsEnabled: true,
       privacyMode: false,
-      fertilityMode: false
+      fertilityMode: false,
+      language: 'en',
+      units: 'metric',
+      theme: 'purple',
+      lastUpdated: new Date().toISOString()
     };
     return { ...data };
   }

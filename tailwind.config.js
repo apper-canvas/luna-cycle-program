@@ -17,7 +17,8 @@ theme: {
         '84': '21rem',
         '96': '24rem',
       },
-      colors: {
+colors: {
+        // Default purple theme
         primary: '#9C6FDE',
         secondary: '#F5A5C8', 
         accent: '#6B46C1',
@@ -26,6 +27,35 @@ theme: {
         warning: '#FF9800',
         error: '#F44336',
         info: '#2196F3',
+        
+        // Theme variations
+        themes: {
+          purple: {
+            primary: '#9C6FDE',
+            secondary: '#F5A5C8',
+            accent: '#6B46C1',
+            surface: '#FBF7FF'
+          },
+          pink: {
+            primary: '#E91E63',
+            secondary: '#F8BBD9',
+            accent: '#C2185B',
+            surface: '#FDF2F8'
+          },
+          green: {
+            primary: '#4CAF50',
+            secondary: '#A5D6A7',
+            accent: '#388E3C',
+            surface: '#F1F8E9'
+          },
+          blue: {
+            primary: '#2196F3',
+            secondary: '#90CAF9',
+            accent: '#1976D2',
+            surface: '#E3F2FD'
+          }
+        },
+        
         surface: {
           50: '#FBF7FF',
           100: '#F3E8FF',
@@ -76,11 +106,17 @@ theme: {
         '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
         'inner': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
       },
-      backgroundImage: {
-        'gradient-primary': 'linear-gradient(135deg, #9C6FDE 0%, #F5A5C8 100%)',
-        'gradient-card': 'linear-gradient(135deg, #FBF7FF 0%, #F3E8FF 100%)',
-        'gradient-button': 'linear-gradient(135deg, #9C6FDE 0%, #6B46C1 100%)',
-        'gradient-desktop': 'linear-gradient(to right, #9C6FDE 0%, #F5A5C8 50%, #6B46C1 100%)',
+backgroundImage: {
+        'gradient-primary': 'linear-gradient(135deg, var(--theme-primary, #9C6FDE) 0%, var(--theme-secondary, #F5A5C8) 100%)',
+        'gradient-card': 'linear-gradient(135deg, var(--theme-surface, #FBF7FF) 0%, #F3E8FF 100%)',
+        'gradient-button': 'linear-gradient(135deg, var(--theme-primary, #9C6FDE) 0%, var(--theme-accent, #6B46C1) 100%)',
+        'gradient-desktop': 'linear-gradient(to right, var(--theme-primary, #9C6FDE) 0%, var(--theme-secondary, #F5A5C8) 50%, var(--theme-accent, #6B46C1) 100%)',
+        
+        // Theme-specific gradients
+        'gradient-purple': 'linear-gradient(135deg, #9C6FDE 0%, #F5A5C8 100%)',
+        'gradient-pink': 'linear-gradient(135deg, #E91E63 0%, #F8BBD9 100%)',
+        'gradient-green': 'linear-gradient(135deg, #4CAF50 0%, #A5D6A7 100%)',
+        'gradient-blue': 'linear-gradient(135deg, #2196F3 0%, #90CAF9 100%)',
       }
     },
   },

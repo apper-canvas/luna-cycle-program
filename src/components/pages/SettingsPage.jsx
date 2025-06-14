@@ -77,11 +77,30 @@ const SettingsPage = () => {
     URL.revokeObjectURL(url);
     toast.success('Data exported successfully!');
   };
+const applyTheme = (themeName) => {
+    const themeColors = {
+      purple: { primary: '#9C6FDE', secondary: '#F5A5C8', accent: '#6B46C1' },
+      pink: { primary: '#E91E63', secondary: '#F8BBD9', accent: '#C2185B' },
+      green: { primary: '#4CAF50', secondary: '#A5D6A7', accent: '#388E3C' },
+      blue: { primary: '#2196F3', secondary: '#90CAF9', accent: '#1976D2' }
+    };
+    
+    const colors = themeColors[themeName] || themeColors.purple;
+    const root = document.documentElement;
+    root.style.setProperty('--theme-primary', colors.primary);
+    root.style.setProperty('--theme-secondary', colors.secondary);
+    root.style.setProperty('--theme-accent', colors.accent);
+  };
 
   useEffect(() => {
     loadSettings();
   }, []);
 
+  useEffect(() => {
+    if (settings?.theme) {
+      applyTheme(settings.theme);
+    }
+  }, [settings?.theme]);
   if (loading) {
     return (
       <div className="space-y-6">
@@ -287,9 +306,116 @@ const SettingsPage = () => {
               Export your cycle data as a JSON file for backup or transfer to another device.
             </p>
           </div>
-        </div>
+</div>
       </Card>
 
+      <Card>
+        <h3 className="text-lg font-semibold font-display text-gray-900 mb-4">
+          Theme
+        </h3>
+        
+        <div className="space-y-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-3">
+              Choose your theme
+            </label>
+            
+            <div className="grid grid-cols-2 gap-3">
+              {[
+                { 
+                  key: 'purple', 
+                  name: 'Purple', 
+                  colors: ['#9C6FDE', '#F5A5C8', '#6B46C1'],
+                  gradient: 'linear-gradient(135deg, #9C6FDE 0%, #F5A5C8 100%)'
+                },
+                { 
+                  key: 'pink', 
+                  name: 'Pink', 
+                  colors: ['#E91E63', '#F8BBD9', '#C2185B'],
+                  gradient: 'linear-gradient(135deg, #E91E63 0%, #F8BBD9 100%)'
+                },
+                { 
+                  key: 'green', 
+                  name: 'Green', 
+                  colors: ['#4CAF50', '#A5D6A7', '#388E3C'],
+                  gradient: 'linear-gradient(135deg, #4CAF50 0%, #A5D6A7 100%)'
+                },
+                { 
+                  key: 'blue', 
+                  name: 'Blue', 
+                  colors: ['#2196F3', '#90CAF9', '#1976D2'],
+                  gradient: 'linear-gradient(135deg, #2196F3 0%, #90CAF9 100%)'
+                }
+              ].map((theme) => (
+                <motion.button
+                  key={theme.key}
+                  onClick={() => {
+                    handleInputChange('theme', theme.key);
+                    // Apply theme immediately
+                    const root = document.documentElement;
+                    root.style.setProperty('--theme-primary', theme.colors[0]);
+                    root.style.setProperty('--theme-secondary', theme.colors[1]);
+                    root.style.setProperty('--theme-accent', theme.colors[2]);
+                    toast.success(`${theme.name} theme applied!`);
+                  }}
+                  className={`
+                    relative p-4 rounded-xl border-2 transition-all
+                    ${settings?.theme === theme.key 
+                      ? 'border-gray-900 shadow-lg' 
+                      : 'border-gray-200 hover:border-gray-300'
+                    }
+                  `}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <div 
+                    className="w-full h-16 rounded-lg mb-3"
+                    style={{ background: theme.gradient }}
+                  />
+                  
+                  <div className="flex justify-center space-x-1 mb-2">
+                    {theme.colors.map((color, index) => (
+                      <div
+                        key={index}
+                        className="w-3 h-3 rounded-full"
+                        style={{ backgroundColor: color }}
+                      />
+                    ))}
+                  </div>
+                  
+                  <p className="text-sm font-medium text-gray-900">
+                    {theme.name}
+                  </p>
+                  
+                  {settings?.theme === theme.key && (
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      className="absolute -top-2 -right-2 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center"
+                    >
+                      <ApperIcon name="Check" className="w-3 h-3 text-white" />
+                    </motion.div>
+                  )}
+                </motion.button>
+              ))}
+            </div>
+          </div>
+          
+          <div className="pt-4 border-t border-gray-200">
+            <div className="flex items-start space-x-3">
+              <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                <ApperIcon name="Palette" className="w-4 h-4 text-purple-600" />
+              </div>
+              <div>
+                <h4 className="font-medium text-gray-900">Personalize Your Experience</h4>
+                <p className="text-sm text-gray-600 mt-1">
+                  Choose a theme that reflects your style. Your selection will be applied immediately across the entire app.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Card>
       <div className="flex space-x-3">
         <Button
           onClick={handleSaveSettings}
