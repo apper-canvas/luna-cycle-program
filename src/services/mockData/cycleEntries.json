@@ -1,0 +1,92 @@
+[
+  {
+    "id": "1",
+    "date": "2024-01-15",
+    "flow": "heavy",
+    "symptoms": ["cramps", "fatigue"],
+    "mood": "irritable",
+    "notes": "First day of period",
+    "temperature": null
+  },
+  {
+    "id": "2", 
+    "date": "2024-01-16",
+    "flow": "heavy",
+    "symptoms": ["cramps", "headache"],
+    "mood": "tired",
+    "notes": "",
+    "temperature": null
+  },
+  {
+    "id": "3",
+    "date": "2024-01-17",
+    "flow": "medium",
+    "symptoms": ["cramps"],
+    "mood": "neutral",
+    "notes": "",
+    "temperature": null
+  },
+  {
+    "id": "4",
+    "date": "2024-01-18",
+    "flow": "light",
+    "symptoms": [],
+    "mood": "good",
+    "notes": "",
+    "temperature": null
+  },
+  {
+    "id": "5",
+    "date": "2024-01-19",
+    "flow": "light",
+    "symptoms": [],
+    "mood": "good",
+    "notes": "Last day",
+    "temperature": null
+  },
+  {
+    "id": "6",
+    "date": "2024-01-28",
+    "flow": "none",
+    "symptoms": [],
+    "mood": "energetic",
+    "notes": "Ovulation day",
+    "temperature": 98.6
+  },
+  {
+    "id": "7",
+    "date": "2024-02-12",
+    "flow": "heavy",
+    "symptoms": ["cramps", "bloating", "fatigue"],
+    "mood": "moody",
+    "notes": "Period started",
+    "temperature": null
+  },
+  {
+    "id": "8",
+    "date": "2024-02-13",
+    "flow": "heavy",
+    "symptoms": ["cramps", "headache"],
+    "mood": "irritable",
+    "notes": "",
+    "temperature": null
+  },
+  {
+    "id": "9",
+    "date": "2024-02-14",
+    "flow": "medium",
+    "symptoms": ["cramps"],
+    "mood": "neutral",
+    "notes": "Valentine's Day period",
+    "temperature": null
+  },
+  {
+    "id": "10",
+    "date": "2024-02-15",
+    "flow": "light",
+    "symptoms": [],
+    "mood": "better",
+    "notes": "",
+    "temperature": null
+  }
+]
