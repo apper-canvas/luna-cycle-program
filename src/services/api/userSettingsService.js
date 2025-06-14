@@ -16,13 +16,14 @@ const userSettingsService = {
     return { ...data };
   },
 
-  async reset() {
+async reset() {
     await delay(250);
     data = {
       averageCycleLength: 28,
       reminderTime: "09:00",
       notificationsEnabled: true,
-      privacyMode: false
+      privacyMode: false,
+      fertilityMode: false
     };
     return { ...data };
   }

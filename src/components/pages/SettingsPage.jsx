@@ -137,6 +137,58 @@ const SettingsPage = () => {
             onChange={(e) => handleInputChange('reminderTime', e.target.value)}
           />
         </div>
+</Card>
+
+      <Card>
+        <h3 className="text-lg font-semibold font-display text-gray-900 mb-4">
+          Fertility Tracking
+        </h3>
+        
+        <div className="space-y-4">
+          <div className="flex items-center justify-between">
+            <div>
+              <h4 className="font-medium text-gray-900">Trying to Conceive (TTC)</h4>
+              <p className="text-sm text-gray-600">Enable fertility tracking with BBT, LH tests, and cervical mucus</p>
+            </div>
+            <motion.button
+              onClick={() => handleToggle('fertilityMode')}
+              className={`
+                relative inline-flex h-6 w-11 items-center rounded-full transition-colors
+                ${settings?.fertilityMode ? 'bg-primary' : 'bg-gray-200'}
+              `}
+              whileTap={{ scale: 0.95 }}
+            >
+              <motion.span
+                className="inline-block h-4 w-4 transform rounded-full bg-white shadow-sm transition-transform"
+                animate={{
+                  x: settings?.fertilityMode ? 24 : 4
+                }}
+                transition={{ duration: 0.2 }}
+              />
+            </motion.button>
+          </div>
+          
+          {settings?.fertilityMode && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="pt-4 border-t border-gray-200"
+            >
+              <div className="flex items-start space-x-3">
+                <div className="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <ApperIcon name="Heart" className="w-4 h-4 text-pink-600" />
+                </div>
+                <div>
+                  <h4 className="font-medium text-gray-900">Enhanced Tracking Active</h4>
+                  <p className="text-sm text-gray-600 mt-1">
+                    Your check-ins now include basal body temperature, LH test results, and cervical mucus observations for comprehensive fertility tracking.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </div>
       </Card>
 
       <Card>

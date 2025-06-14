@@ -2,5 +2,6 @@
   "averageCycleLength": 28,
   "reminderTime": "09:00",
   "notificationsEnabled": true,
-  "privacyMode": false
+  "privacyMode": false,
+  "fertilityMode": false
 }

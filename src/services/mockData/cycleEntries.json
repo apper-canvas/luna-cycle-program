@@ -4,89 +4,119 @@
     "date": "2024-01-15",
     "flow": "heavy",
     "symptoms": ["cramps", "fatigue"],
-    "mood": "irritable",
+"mood": "irritable",
     "notes": "First day of period",
-    "temperature": null
+    "temperature": null,
+    "basalBodyTemp": null,
+    "lhTest": null,
+    "cervicalMucus": null
   },
   {
     "id": "2", 
     "date": "2024-01-16",
     "flow": "heavy",
     "symptoms": ["cramps", "headache"],
-    "mood": "tired",
+"mood": "tired",
     "notes": "",
-    "temperature": null
+    "temperature": null,
+    "basalBodyTemp": null,
+    "lhTest": null,
+    "cervicalMucus": null
   },
   {
     "id": "3",
     "date": "2024-01-17",
     "flow": "medium",
     "symptoms": ["cramps"],
-    "mood": "neutral",
+"mood": "neutral",
     "notes": "",
-    "temperature": null
+    "temperature": null,
+    "basalBodyTemp": null,
+    "lhTest": null,
+    "cervicalMucus": null
   },
   {
     "id": "4",
     "date": "2024-01-18",
     "flow": "light",
     "symptoms": [],
-    "mood": "good",
+"mood": "good",
     "notes": "",
-    "temperature": null
+    "temperature": null,
+    "basalBodyTemp": null,
+    "lhTest": null,
+    "cervicalMucus": null
   },
   {
     "id": "5",
     "date": "2024-01-19",
     "flow": "light",
     "symptoms": [],
-    "mood": "good",
+"mood": "good",
     "notes": "Last day",
-    "temperature": null
+    "temperature": null,
+    "basalBodyTemp": null,
+    "lhTest": null,
+    "cervicalMucus": null
   },
   {
     "id": "6",
     "date": "2024-01-28",
     "flow": "none",
     "symptoms": [],
-    "mood": "energetic",
+"mood": "energetic",
     "notes": "Ovulation day",
-    "temperature": 98.6
+    "temperature": 98.6,
+    "basalBodyTemp": 97.85,
+    "lhTest": "peak",
+    "cervicalMucus": "eggwhite"
   },
   {
     "id": "7",
     "date": "2024-02-12",
     "flow": "heavy",
     "symptoms": ["cramps", "bloating", "fatigue"],
-    "mood": "moody",
+"mood": "moody",
     "notes": "Period started",
-    "temperature": null
+    "temperature": null,
+    "basalBodyTemp": null,
+    "lhTest": null,
+    "cervicalMucus": null
   },
   {
     "id": "8",
     "date": "2024-02-13",
     "flow": "heavy",
     "symptoms": ["cramps", "headache"],
-    "mood": "irritable",
+"mood": "irritable",
     "notes": "",
-    "temperature": null
+    "temperature": null,
+    "basalBodyTemp": null,
+    "lhTest": null,
+    "cervicalMucus": null
   },
   {
     "id": "9",
     "date": "2024-02-14",
     "flow": "medium",
     "symptoms": ["cramps"],
-    "mood": "neutral",
+"mood": "neutral",
     "notes": "Valentine's Day period",
-    "temperature": null
+    "temperature": null,
+    "basalBodyTemp": null,
+    "lhTest": null,
+    "cervicalMucus": null
   },
   {
     "id": "10",
     "date": "2024-02-15",
     "flow": "light",
     "symptoms": [],
-    "mood": "better",
+"mood": "better",
     "notes": "",
-    "temperature": null
+    "temperature": null,
+    "basalBodyTemp": null,
+    "lhTest": null,
+    "cervicalMucus": null
   }
 ]
