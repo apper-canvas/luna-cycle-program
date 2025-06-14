@@ -13,6 +13,7 @@ const Button = ({
   onClick,
   type = 'button',
   className = '',
+  loading,
   ...props 
 }) => {
   const baseClasses = "inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2";
@@ -46,7 +47,7 @@ const Button = ({
   const handleClick = disabled ? undefined : onClick;
 
   return (
-    <motion.button
+<motion.button
       type={type}
       className={buttonClasses}
       onClick={handleClick}
@@ -54,7 +55,11 @@ const Button = ({
       whileHover={disabled ? {} : { scale: 1.02 }}
       whileTap={disabled ? {} : { scale: 0.98 }}
       transition={{ duration: 0.15 }}
-      {...props}
+      {...(() => {
+        // Filter out custom React props to prevent DOM warnings
+        const { variant, size, icon, iconPosition, fullWidth, loading, ...domProps } = props;
+        return domProps;
+      })()}
     >
       {icon && iconPosition === 'left' && IconComponent}
       {children}
