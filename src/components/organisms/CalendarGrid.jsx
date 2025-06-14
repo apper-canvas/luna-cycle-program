@@ -51,19 +51,19 @@ const CalendarGrid = ({
     return date >= startDate && date <= endDate;
   };
 
-  return (
-    <div className="bg-white rounded-xl p-6 shadow-sm">
+return (
+    <div className="bg-white rounded-xl p-6 md:p-8 shadow-sm">
       {/* Header */}
-      <div className="flex items-center justify-between mb-6">
-        <h2 className="text-xl font-bold font-display text-gray-900">
+      <div className="flex items-center justify-between mb-6 md:mb-8">
+        <h2 className="text-xl md:text-2xl font-bold font-display text-gray-900">
           {format(currentDate, 'MMMM yyyy')}
         </h2>
       </div>
 
       {/* Week day labels */}
-      <div className="grid grid-cols-7 gap-2 mb-4">
+      <div className="grid grid-cols-7 gap-2 md:gap-3 mb-4">
         {weekDays.map(day => (
-          <div key={day} className="text-center text-sm font-medium text-gray-500 py-2">
+          <div key={day} className="text-center text-sm md:text-base font-medium text-gray-500 py-2">
             {day}
           </div>
         ))}
@@ -71,7 +71,7 @@ const CalendarGrid = ({
 
       {/* Calendar grid */}
       <motion.div 
-        className="grid grid-cols-7 gap-2"
+        className="grid grid-cols-7 gap-2 md:gap-3"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.3 }}
@@ -101,17 +101,17 @@ const CalendarGrid = ({
       </motion.div>
 
       {/* Legend */}
-      <div className="flex justify-center mt-6 space-x-4 text-xs">
-        <div className="flex items-center space-x-1">
-          <div className="w-3 h-3 bg-red-500 rounded-full" />
+      <div className="flex justify-center md:justify-start mt-6 md:mt-8 space-x-4 md:space-x-6 text-xs md:text-sm">
+        <div className="flex items-center space-x-1 md:space-x-2">
+          <div className="w-3 h-3 md:w-4 md:h-4 bg-red-500 rounded-full" />
           <span className="text-gray-600">Period</span>
         </div>
-        <div className="flex items-center space-x-1">
-          <div className="w-3 h-3 bg-secondary/30 border border-secondary rounded-full" />
+        <div className="flex items-center space-x-1 md:space-x-2">
+          <div className="w-3 h-3 md:w-4 md:h-4 bg-secondary/30 border border-secondary rounded-full" />
           <span className="text-gray-600">Fertile</span>
         </div>
-        <div className="flex items-center space-x-1">
-          <div className="w-3 h-3 bg-primary/20 border-2 border-primary border-dashed rounded-full" />
+        <div className="flex items-center space-x-1 md:space-x-2">
+          <div className="w-3 h-3 md:w-4 md:h-4 bg-primary/20 border-2 border-primary border-dashed rounded-full" />
           <span className="text-gray-600">Predicted</span>
         </div>
       </div>

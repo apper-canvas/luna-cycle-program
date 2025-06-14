@@ -38,7 +38,7 @@ body {
   max-width: 100%;
 }
 
-/* Desktop-only fixed layouts */
+/* Desktop responsive utilities */
 @media (min-width: 768px) {
   .desktop-layout {
     height: 100vh;
@@ -48,6 +48,54 @@ body {
   .desktop-scrollable {
     overflow-y: auto;
     height: 100%;
+  }
+  
+  .desktop-container {
+    max-width: none;
+    width: 100%;
+  }
+  
+  .desktop-sidebar {
+    width: 280px;
+    flex-shrink: 0;
+  }
+  
+  .desktop-main {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .desktop-grid {
+    display: grid;
+    gap: 2rem;
+  }
+  
+  .desktop-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .desktop-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .desktop-text-scale {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+  
+  .desktop-heading-scale {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+  
+  .desktop-card-padding {
+    padding: 2rem;
+  }
+  
+  .desktop-form-spacing {
+    gap: 2rem;
   }
 }
 

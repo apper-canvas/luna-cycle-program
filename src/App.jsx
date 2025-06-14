@@ -6,10 +6,11 @@ import { routeArray } from './config/routes';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Navigate to="/calendar" replace />} />
+    <div className="desktop-layout">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Navigate to="/calendar" replace />} />
           {routeArray.map(route => (
             <Route 
               key={route.id} 
@@ -17,25 +18,26 @@ function App() {
               element={<route.component />} 
             />
           ))}
-        </Route>
-      </Routes>
-      <ToastContainer
-        position="top-center"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-        toastClassName="rounded-lg shadow-lg"
-        bodyClassName="text-sm font-body"
-        progressClassName="bg-primary"
-        style={{ zIndex: 9999 }}
-      />
-    </BrowserRouter>
+</Route>
+        </Routes>
+        <ToastContainer
+          position="top-center"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+          toastClassName="rounded-lg shadow-lg"
+          bodyClassName="text-sm font-body"
+          progressClassName="bg-primary"
+          style={{ zIndex: 9999 }}
+        />
+      </BrowserRouter>
+    </div>
   );
 }
 

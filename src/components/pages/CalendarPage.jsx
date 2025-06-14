@@ -90,45 +90,51 @@ const CalendarPage = () => {
     );
   }
 
-  return (
+return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="space-y-6"
+      className="space-y-6 md:space-y-8"
     >
-      <CycleOverviewCard 
-        cycle={currentCycle} 
-        prediction={prediction}
-      />
-      
-      <CalendarGrid
-        currentDate={currentDate}
-        entries={entries}
-        prediction={prediction}
-        onDayClick={handleDayClick}
-      />
-
-      {prediction && (
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="bg-gradient-card rounded-xl p-4 border border-primary/20"
-        >
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
-              <span className="text-primary text-lg">🔮</span>
-            </div>
-            <div>
-              <h3 className="font-semibold font-display text-gray-900">
-                Next Period Prediction
-              </h3>
-              <p className="text-sm text-gray-600 font-body">
-                Expected on {format(new Date(prediction.nextPeriodStart), 'MMM d, yyyy')}
-              </p>
-            </div>
-          </div>
-        </motion.div>
-      )}
+      <div className="md:grid md:grid-cols-1 lg:grid-cols-3 md:gap-8 space-y-6 md:space-y-0">
+        <div className="lg:col-span-2">
+          <CalendarGrid
+            currentDate={currentDate}
+            entries={entries}
+            prediction={prediction}
+            onDayClick={handleDayClick}
+          />
+        </div>
+        
+        <div className="space-y-6">
+          <CycleOverviewCard 
+            cycle={currentCycle} 
+            prediction={prediction}
+          />
+          
+          {prediction && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="bg-gradient-card rounded-xl p-4 md:p-6 border border-primary/20"
+            >
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
+                  <span className="text-primary text-lg">🔮</span>
+                </div>
+                <div>
+                  <h3 className="font-semibold font-display text-gray-900">
+                    Next Period Prediction
+                  </h3>
+                  <p className="text-sm text-gray-600 font-body">
+                    Expected on {format(new Date(prediction.nextPeriodStart), 'MMM d, yyyy')}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </div>
+      </div>
     </motion.div>
   );
 };
