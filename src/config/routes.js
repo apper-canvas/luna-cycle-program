@@ -2,6 +2,7 @@ import CalendarPage from '@/components/pages/CalendarPage';
 import CheckInPage from '@/components/pages/CheckInPage';
 import InsightsPage from '@/components/pages/InsightsPage';
 import SettingsPage from '@/components/pages/SettingsPage';
+import ProfilePage from '@/components/pages/ProfilePage';
 
 export const routes = {
   calendar: {
@@ -25,6 +26,13 @@ export const routes = {
     path: '/insights',
     icon: 'TrendingUp',
     component: InsightsPage
+},
+  profile: {
+    id: 'profile',
+    label: 'Profile',
+    path: '/profile',
+    icon: 'User',
+    component: ProfilePage
   },
   settings: {
     id: 'settings',
